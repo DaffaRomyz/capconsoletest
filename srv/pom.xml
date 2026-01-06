@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -55,7 +58,7 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-				<dependency>
+		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
 			<version>1.5.20</version>
@@ -84,6 +87,12 @@
 			<groupId>com.sap.hcp.cf.logging</groupId>
 			<artifactId>cf-java-logging-support-logback</artifactId>
 			<version>4.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sap.cds</groupId>
+			<artifactId>cds-feature-console</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 
@@ -147,18 +156,19 @@
 						</goals>
 					</execution>
 
-                    <execution>
-                        <id>cds.build</id>
-                        <goals>
-                            <goal>cds</goal>
-                        </goals>
-                        <configuration>
-                            <commands>
-                                <command>build --for java</command>
-                                <command>deploy --to hana --dry &gt; srv/src/main/resources/schema.sql</command>
-                            </commands>
-                        </configuration>
-                    </execution>
+					<execution>
+						<id>cds.build</id>
+						<goals>
+							<goal>cds</goal>
+						</goals>
+						<configuration>
+							<commands>
+								<command>build --for java</command>
+								<command>deploy --to hana --dry &gt;
+									srv/src/main/resources/schema.sql</command>
+							</commands>
+						</configuration>
+					</execution>
 
 					<execution>
 						<id>cds.generate</id>
