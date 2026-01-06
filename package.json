@@ -10,5 +10,6 @@
   "sapux": [
     "app/capconsoletest_authors",
     "app/capconsoletest_books"
-  ]
+  ],
+  "dependencies": {}
 }
